@@ -1,1 +1,5 @@
 # AbsoluteQuantificationXenopus
+
+When we first published the paper "Deep Proteomics of the Xenopus laevis Egg using an mRNA-derived Reference Database", we used an mRNA based reference database (PHROG) to search the MS-spectra. Since then, the genome annotation of X. laevis has improved substantially. This repository contains the code to re-analyze that mass spectra data with a protein fasta file derived from the X. laevis genome (v9.2 and v10.1) and estimate the absolute protein concentration.
+
+In the paper referenced above, the X. laevis proteome was shot prefractiontaed twice -- once digested with only LysC and a second with both Trypsin and LysC. To improve depth, we estimate protein concentration using both datasets together -- as if some of the protein were digested with LysC and some were digested with LysC and Trypsin. To calculate the number of theoretical peptides, we independently calculate the number of LysC theoretical peptides, the number of Trypsin theoretical peptides, and then add them together. For this analysis, we included theoretical peptides that were between length 7 and 50 (inclusive) amino acids.
